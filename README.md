@@ -19,7 +19,6 @@ You can install it as follows:
 
 	apt-get install ncurses-base libncurses5 libncurses5-dev
 
-
 linux kernel superior al 3.13  
 linux kernel greater than 3.13
 
@@ -47,14 +46,14 @@ so that they do not interfere with the proper functioning of the application.
 Por lo tanto Se recomienda guardar las reglas actuales del sistema con los siguientes pasos:  
 Therefore it is recommended to save the current system rules with the following steps:
 
-	nft list [nombre_tabla] > fichero.txt
-	nft list [table_name] > file.txt
+	    nft list [nombre_tabla] > fichero.txt
+	or, nft list [table_name] > file.txt
 
 Y para restaurar:  
 And to restore:
 
-	nft -f fichero.txt
-	nft -f file.txt
+	    nft -f fichero.txt
+	or, nft -f file.txt
 
 
 BLOG: http://caballeroalba.cf/wordpress/
