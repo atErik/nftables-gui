@@ -13,6 +13,7 @@
 
 int print_menu(int highlight, char *choices[],int n_choices, char *message, char *title)
 {
+	//task: modify method so that you only need the array of options, that the only one prints and detects the menu
 	//tarea: modificar metodo para que solo necesite el array de las opciones, que el solo imprima y detecte el menu
   int x,y,i;
   int startx,starty=0;
@@ -32,8 +33,8 @@ int print_menu(int highlight, char *choices[],int n_choices, char *message, char
 	int choice = 0;
 	int c=0;
 	
-	while(1) //infinito para vovler a el desde los ficheros de funciones
-	{	
+	while(1)	//infinito para vovler a el desde los ficheros de funciones
+	{		//infinite for vovler to the from function files
 
 	
 
@@ -58,14 +59,19 @@ int print_menu(int highlight, char *choices[],int n_choices, char *message, char
 
 		
 		
-				c = wgetch(menu_win); // obtenemos las pulsaciones del teclado
+				// we get the keystrokes // obtenemos las pulsaciones del teclado
+				c = wgetch(menu_win);
 				switch(c)
 				{	
-					case KEY_UP: //flecha arriba
-						if(highlight == 1) // comprobamos que si highlight es 1 (primera posicion) lo dejamos igual (es decirlo, lo seleccionamos como high)
-							highlight = n_choices; // lo dejamos a 1 (n_choices era 0)
+					case KEY_UP: // arrow up // flecha arriba
+						// we check that if highlight is 1 (first position) we leave it the same (i.e. we select it as high)
+						// comprobamos que si highlight es 1 (primera posicion) lo dejamos igual (es decirlo, lo seleccionamos como high)
+						if(highlight == 1)
+							// we left it at 1 (n_choices was 0) // lo dejamos a 1 (n_choices era 0)
+							highlight = n_choices;
 						else
-							--highlight; // si no es uno, subimos de posicion
+							// if it's not one, we're up in position // si no es uno, subimos de posicion
+							--highlight;
 						break;
 					case KEY_DOWN:
 						if(highlight == n_choices)
@@ -77,16 +83,18 @@ int print_menu(int highlight, char *choices[],int n_choices, char *message, char
 				
 						break;
 					case 10:
-						choice = highlight; // caso intro, pasa a elegir la opcion
+						// case intro, it happens to choose the option // caso intro, pasa a elegir la opcion
+						choice = highlight;
 						break;
 					default:
-						mvprintw(24, 0, "Charcter pressed is = %3d Hopefully it can be printed as '%c'", c, c);
+						mvprintw(24, 0, "Character pressed is = %3d Hopefully it can be printed as '%c'", c, c);
 						refresh();
 						break;
 				}
 		
 
-				if(choice != 0)	/*se sale del loop infinito, por lo cual procedemos a hacer segun la choise elegida */
+				if(choice != 0)	/* se sale del loop infinito, por lo cual procedemos a hacer segun la choise elegida.
+						   goes out of the infinite loop, so we proceed to do according to the chosen choise. */
 					break;
 				else
 					continue;
@@ -95,7 +103,9 @@ int print_menu(int highlight, char *choices[],int n_choices, char *message, char
 	mvprintw(23, 0, "You chose choice %d with choice string %s\n", choice, choices[choice - 1]);
 	
 	clrtoeol();
-	refresh();// aqui en funcion de la choice hacemos las cosas necesarias
+	//here in function of the choice we do the necessary things
+	//aqui en funcion de la choice hacemos las cosas necesarias
+	refresh();
 	delwin(menu_win);  
   endwin();
 	
