@@ -1,8 +1,8 @@
 # nftables-gui
-Nftables-gui is a graphical interface for nftables[1] written in c using ncurses to facilitate the use of the nft tool.  
+Nftables-gui is a graphical interface for nftables[1] written in C using ncurses to facilitate the use of the nft tool.  
 Nftables-gui es una interfaz gráfica para nftables[1] escrita en c usando ncurses para facilitar el uso de la herramienta nft.
-* For English translated edition go <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>. Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" to "Mod-and-English" branch, then you may "Download" english edition or you may submit your (english) code-changes, etc.
-* Para la edición traducida al inglés, vaya <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">aquí</a>. En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambiar "maestro" a la rama "Mod-and-English", entonces puede "Descargar" edición en inglés o puede enviar sus cambios de código (inglés), etc.
+* For English translated edition go <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>, Or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" to "Mod-and-English" branch, then you may "Download" english edition or you may submit your (english) code-changes, etc.
+* Para la edición traducida al inglés vaya <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">aquí</a>, Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambiar "maestro" a la rama "Mod-and-English", entonces puede "Descargar" edición en inglés o puede enviar sus cambios de código (inglés), etc.
 
 It is part of the end-of-career project, so the status of this software will be followed.  
 Forma parte del proyecto de fin de carrera, por lo cual el estado de este software se seguirá.
@@ -27,7 +27,7 @@ linux kernel superior al 3.13
 nftables installed on the system [2]  
 nftables instalado en el sistema [2]
 
-Once done, just execute the following commands:
+Once done, just execute the following commands:  
 Una vez hecho, basta con ejecutar los siguentes comandos:
 
 	./configure
@@ -48,19 +48,19 @@ actuales para que no interfieran en el correcto funcionamiento de la aplicación
 Therefore it is recommended to save the current system rules with the following steps:  
 Por lo tanto Se recomienda guardar las reglas actuales del sistema con los siguientes pasos:
 
-	    nft list [nombre_tabla] > fichero.txt
-	or, nft list [table_name] > file.txt
+	    nft list [table_name] > file.txt
+	or, nft list [nombre_tabla] > fichero.txt
 
 And to restore:  
 Y para restaurar:
 
-	    nft -f fichero.txt
-	or, nft -f file.txt
+	    nft -f file.txt
+	or, nft -f fichero.txt
 
 
 Documentation (English):<br />
-<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation(English)/iptables-vs-nftables_nftables-gui%5Fgithub.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
-<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation(English)/Requirements%20document%20-%20nftables-gui%20-%20github.html">Requirements document - nftables-gui - github.html</a><br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation%28English%29/iptables-vs-nftables%5Fnftables-gui%5Fgithub.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation%28English%29/Requirements%20document%20-%20nftables-gui%20-%20github.html">Requirements document - nftables-gui - github.html</a><br />
 <br />
 
 Original Author's BLOG: http://caballeroalba.cf/wordpress/
