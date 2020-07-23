@@ -1,14 +1,28 @@
 # nftables-gui
-Nftables-gui es una interfaz gráfica para nftables[1] escrita en c usando ncurses para facilitar el uso de la herramienta nft.  
-Nftables-gui is a graphical interface for nftables[1] written in c using ncurses to facilitate the use of the nft tool.
-* Para la edición traducida al inglés, vaya <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">aquí</a>, Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambiar "maestro" a la rama "Mod-and-English", entonces puede "Descargar" edición en inglés o puede enviar sus cambios de código (inglés), etc.
-* **For English (translated) edition go <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>**, or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" to "Mod-and-English" branch, then you may "Download" english edition or you may submit your (english) code-changes, etc.
+Nftables-gui es una interfaz gráfica para nftables[1] escrita en c usando ncurses 
+para facilitar el uso de la herramienta nft.  
+Nftables-gui is a graphical interface for nftables[1] written in c using ncurses 
+to facilitate the use of the nft tool.
+* Para la edición traducida al inglés, vaya 
+<a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">aquí</a>, 
+Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", 
+Cambiar "maestro" a la rama "Mod-and-English", 
+entonces puede "Descargar" edición en inglés o puede enviar sus cambios de código (inglés), 
+etc.
+* **For English (translated) edition go** 
+**<a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>**, 
+Or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, 
+Change "master" to "Mod-and-English" branch, 
+then you may "Download" english edition or you may submit your (english) code-changes, 
+etc.
 
 Forma parte del proyecto de fin de carrera, por lo cual el estado de este software se seguirá.  
 It is part of the end-of-career project, so the status of this software will be followed.
 
-desarrollando a lo largo del curso 14/15 hasta junio. Lo cual no quiere decir que no se seguirá después.  
-developing throughout the course 2014/2015 through June. Which doesn't mean it won't follow later.
+desarrollando a lo largo del curso 14/15 hasta junio. 
+Lo cual no quiere decir que no se seguirá después.  
+developing throughout the course 2014/2015 through June. 
+Which doesn't mean it won't follow later.
 
 Para poder compilar es necesario tener los siguientes requisitos :  
 To be able to compile it is necessary to have the following requirements :
@@ -36,8 +50,10 @@ Once done, just execute the following commands
 Esto generará el ejecutable nftables-gui el cual necesita permisos de root para poder ejecutarse.  
 This will generate the nftables-gui executable which needs root permissions in order to run.
 
-Como nftables-gui esta en aún en un estado alfa, nftables-gui aún no puede leer las reglas actuales en el sistema,  
-As nftables-gui is still in an alpha state, nftables-gui still cannot read the current rules in the system,
+Como nftables-gui esta en aún en un estado alfa, 
+nftables-gui aún no puede leer las reglas actuales en el sistema,  
+As nftables-gui is still in an alpha state, 
+nftables-gui still cannot read the current rules in the system,
 
 por lo cual, antes de empezar la ejecución principal, nftables-gui borra las reglas  
 so before starting the main run/execution, nftables-gui clears the current rules
@@ -58,7 +74,7 @@ And to restore:
 	or, nft -f file.txt
 
 
-BLOG: http://caballeroalba.cf/wordpress/
+Author's Blog: http://caballeroalba.cf/wordpress/
 
-[1] http://www.netfilter.org/projects/nftables/index.html  
-[2] http://wiki.nftables.org/wiki-nftables/index.php/Building_and_installing_nftables_from_sources
+[1] https://www.netfilter.org/projects/nftables/index.html  
+[2] https://wiki.nftables.org/wiki-nftables/index.php/Building_and_installing_nftables_from_sources
