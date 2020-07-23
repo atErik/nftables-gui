@@ -59,7 +59,8 @@ And to restore:
 
 
 Documentation(English):<br />
-<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation(English)/iptables-vs-nftables_nftables-gui_github.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation(English)/iptables-vs-nftables_nftables-gui%5Fgithub.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation(English)/Requirements%20document%20-%20nftables-gui%20-%20github.html">Requirements document - nftables-gui - github.html</a><br />
 <br />
 
 BLOG: http://caballeroalba.cf/wordpress/
