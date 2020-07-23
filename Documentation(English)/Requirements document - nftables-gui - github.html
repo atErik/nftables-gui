@@ -1,0 +1,410 @@
+<html class="translated-ltr" lang="en">
+<head>
+<style type="text/css">.tsv-src-text {display: none !important} .tsv-src-active-text {display: block!important;color:black!important; font-size:12px!important;font-family:arial,sans-serif!important}.tsv-src-active-text a {font-size:12px!important}.tsv-src-active-text a:link {color:#00c!important;text-decoration:underline!important}.tsv-src-active-text a:visited {color:purple!important;text-decoration:underline!important}.tsv-src-active-text a:active {color:red!important;text-decoration:underline!important}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="José María Caballero Alba ">
+<meta name="Title" content="Documento de requisitos ">
+<meta name="Creator" content="LaTeX with hyperref package">
+<meta name="Producer" content="pdfTeX-1.40.14">
+<meta name="CreationDate" content="D:20150208230310+01'00'">
+<meta name="ModDate" content="D:20150208230310+01'00'">
+<meta name="Fullbanner" content="This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) kpathsea version 6.1.1">
+<title>Requirements document - nftables-gui - github</title>
+<link rel="stylesheet" type="text/css" href="Requirements%20document%20-%20nftables-gui%20-%20github_files/iw_sprite.css">
+</head>
+<body vlink="blue" link="blue" bgcolor="#ffffff">
+<style>
+.spinner-container {width:25%;top:20px;left:50%;margin-left:-12.5%;border-radius:8px;position:fixed;
+text-align:center;box-shadow:0 0 10px rgba(0,0,0,0.24);background:#fff;overflow:hidden;}
+.spinner-container p{font-family:'Roboto', Arial, sans-serif;color:rgba(0,0,0,0.87);
+margin:12px 0 16px 0;padding:0;font-size:12px;}
+.spinner-container img{width:22px;height:22px;margin:16px 0 0;padding:0;}
+</style>
+<table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="1"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 1</font></font></b></a></font></td></tr></tbody></table><font size="4" face="Times"><span style="font-size:23px;font-family:Times">
+<div style="position:absolute;top:418;left:327"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements document</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:16px;font-family:Times">
+<div style="position:absolute;top:487;left:356"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba</font></font></nobr></div>
+<div style="position:absolute;top:540;left:381"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">February 8, 2015</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:1214;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">one</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:1363;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="2"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 2</font></font></b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:22px;font-family:Times">
+<div style="position:absolute;top:1546;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Index</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:15px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:1603;left:201"><nobr><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1. Introduction</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1603;left:708"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:15px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:1654;left:201"><nobr><a href="#4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. Reach</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1654;left:708"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:15px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:1704;left:201"><nobr><a href="#5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3. Introduction to the problem domain</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1704;left:708"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:15px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:1755;left:201"><nobr><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4. Glossary of terms</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1755;left:708"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:15px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:1806;left:201"><nobr><a href="#7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5. Specification of requirements</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:1806;left:708"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:13px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:1844;left:223"><nobr><a href="#7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.1. </font><font style="vertical-align: inherit;">General requirements </font></font></a><font color="#000000"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">7</font></font></font></nobr></div>
+<div style="position:absolute;top:1880;left:223"><nobr><a href="#7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.2. </font><font style="vertical-align: inherit;">Information requirements </font></font></a><font color="#000000"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">7</font></font></font></nobr></div>
+<div style="position:absolute;top:1916;left:223"><nobr><a href="#7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.3. </font><font style="vertical-align: inherit;">Business rules </font></font></a><font color="#000000"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">7</font></font></font></nobr></div>
+<div style="position:absolute;top:1952;left:223"><nobr><a href="#8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.4. </font><font style="vertical-align: inherit;">Functional requirements </font></font></a><font color="#000000"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">8</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:15px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:2000;left:201"><nobr><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6. Conceptual model</font></font></a></nobr></div>
+
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:2000;left:708"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ff0000"><span style="font-size:13px;font-family:Times;color:#ff0000">
+<div style="position:absolute;top:2038;left:223"><nobr><a href="#10"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6.1. </font><font style="vertical-align: inherit;">Traceability matrix </font></font></a><font color="#000000"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">10</font></font></font></nobr></div>
+<div style="position:absolute;top:2074;left:223"><nobr><a href="#11"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6.2. </font><font style="vertical-align: inherit;">Test scenario </font></font></a><font color="#000000"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">eleven</font></font></font></nobr></div>
+<div style="position:absolute;top:2110;left:223"><nobr><a href="#12"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6.3. </font><font style="vertical-align: inherit;">Dependency graph</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:2110;left:425"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">12</font></font></nobr></div>
+<div style="position:absolute;top:2402;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">two</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:2551;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="3"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 3</font></font></b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:22px;font-family:Times">
+<div style="position:absolute;top:2730;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1. Introduction</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:2789;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The nftables-gui software aims to model the graphical interface of nftables in a</font></font></nobr></div>
+<div style="position:absolute;top:2807;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">to make it easier to use and less time consuming to implement change iptables</font></font></nobr></div>
+<div style="position:absolute;top:2825;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">by nftables.</font></font></nobr></div>
+<div style="position:absolute;top:3590;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:3739;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="4"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 4</font></font></b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:22px;font-family:Times">
+<div style="position:absolute;top:3918;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. Reach</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:3977;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui aims to offer the functionality developed so far by</font></font></nobr></div>
+<div style="position:absolute;top:3995;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">nftables, for which the following functionalities can be distinguished:</font></font></nobr></div>
+<div style="position:absolute;top:4043;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Table creation / deletion</font></font></nobr></div>
+<div style="position:absolute;top:4073;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">String creation / deletion</font></font></nobr></div>
+<div style="position:absolute;top:4102;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create / delete rules</font></font></nobr></div>
+<div style="position:absolute;top:4132;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Export / import rules using json and xml</font></font></nobr></div>
+<div style="position:absolute;top:4778;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:4927;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="5"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 5</font></font></b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:22px;font-family:Times">
+<div style="position:absolute;top:5106;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3. Introduction to the problem domain</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5165;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Studying the other project documents, different</font></font></nobr></div>
+<div style="position:absolute;top:5183;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">processes, then we proceed to explain in more detail how</font></font></nobr></div>
+<div style="position:absolute;top:5201;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">These processes will be managed:</font></font></nobr></div>
+<div style="position:absolute;top:5249;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create a table:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5285;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create a table within the nftables system.</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5314;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deleting a table:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5351;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delete a table within the nftables system.</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5380;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Creating a chain:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5417;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create a string within the nftables system.</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5446;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deleting a string:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5482;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delete a string within the nftables system.</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5512;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create a rule:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5548;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create a rule within the nftables system.</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5577;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delete a rule:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5614;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delete a rule within the nftables system.</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5643;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Export rules in xml or json:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5680;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is intended to export a set of rules to an external file</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5694;left:271"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">towards nftables</font></font></nobr></div>
+<div style="position:absolute;top:5727;left:238"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Import rules in xml or json:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:12px;font-family:Times">
+<div style="position:absolute;top:5763;left:256"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is intended to import a set of rules into nftables by</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5778;left:271"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">an external file.</font></font></nobr></div>
+<div style="position:absolute;top:5966;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:6115;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="6"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 6</font></font></b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:22px;font-family:Times">
+<div style="position:absolute;top:6294;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4. Glossary of terms</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:6353;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The terms used in this document are explained below:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:6387;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Table: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A table is an object that contains a set of strings, they can be</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:6407;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">of type ip, ip6, arp and nat.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:6440;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">String: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A string is an object that can (as in iptables) contain a</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:6460;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">set of rules, can be of the following types (hook): INPUT, OUTPUT, PREROUTE, POSTROUTE</font></font></nobr></div>
+<div style="position:absolute;top:6478;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">and CUSTOM.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:6512;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rule: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A rule is a series of filtering orders on a certain type</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:6532;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">package.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:6566;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Port: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A port is an identifying number through which the different</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:6586;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Some of the famous network protocols are: 80 (http) 443 (https), 21 (ftp), 22 (ssh).</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:6620;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IP: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">An IP is a 32-bit address divided into 8-bit blocks of the type:</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:6640;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">xxx.xxx.xxx.xxx.</font></font></nobr></div>
+<div style="position:absolute;top:6676;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">COMPLETE ADDING WHEN THEY COME OUT</font></font></nobr></div>
+<div style="position:absolute;top:7154;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:7303;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="7"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 7</font></font></b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:22px;font-family:Times">
+<div style="position:absolute;top:7482;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5. Specification of requirements</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:18px;font-family:Times">
+<div style="position:absolute;top:7539;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.1. </font><font style="vertical-align: inherit;">General requirements</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:7589;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The software system can be used by any user with permission</font></font></nobr></div>
+<div style="position:absolute;top:7606;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">administrator and must store in a database all the information</font></font></nobr></div>
+<div style="position:absolute;top:7624;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">relevant to the system, being this: tables, chains, rules. </font><font style="vertical-align: inherit;">On the other hand the</font></font></nobr></div>
+<div style="position:absolute;top:7642;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">system shall allow a table, chain or rule to be added, modified</font></font></nobr></div>
+<div style="position:absolute;top:7660;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">modified or eliminated at any time and any user can do it</font></font></nobr></div>
+<div style="position:absolute;top:7678;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">with permissions.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:18px;font-family:Times">
+<div style="position:absolute;top:7733;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.2. </font><font style="vertical-align: inherit;">Information requirements</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:7816;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RI-001 TABLE: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The system must store the corresponding information</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:7836;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">to a table, specifically: table name, table family (ip, ip6, arp,</font></font></nobr></div>
+<div style="position:absolute;top:7854;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">nat, raw, etc) set of strings you have (if you have them) and associated rules</font></font></nobr></div>
+<div style="position:absolute;top:7872;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">these.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:7905;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RI-002 CHAIN: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The system must store the corresponding information</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:7925;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tooth to a chain, specifically: name the chain, type of chain (INPUT,</font></font></nobr></div>
+<div style="position:absolute;top:7943;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OUTPUT, PREROUTE, POSTROUTING, CUSTOM) and the rules associated with</font></font></nobr></div>
+<div style="position:absolute;top:7961;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">is.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:7994;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RI-003 RULE: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The system must store the corresponding information</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:8014;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">to a rule, specifically: rule action (drop, accept, reject, redirect) the</font></font></nobr></div>
+<div style="position:absolute;top:8032;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">source and destination port (if any) ip address and destination (if any)</font></font></nobr></div>
+<div style="position:absolute;top:8050;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">network (if any) protocol, connection status, etc.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:18px;font-family:Times">
+<div style="position:absolute;top:8105;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.3. </font><font style="vertical-align: inherit;">Business rules</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:8188;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-001 CREATE A TABLE: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It will not be allowed to create a table with a</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:8208;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">name that already exists or of a family other than those established by the system</font></font></nobr></div>
+<div style="position:absolute;top:8226;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(ip, ip6, nat, raw, arp).</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:8259;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-002 DELETE A TABLE: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It will not be allowed to delete a table that</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:8279;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">contain strings with rules (if strings are empty if you can delete the</font></font></nobr></div>
+<div style="position:absolute;top:8297;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">table).</font></font></nobr></div>
+<div style="position:absolute;top:8342;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:8491;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="8"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 8</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:8676;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-003 CREATE A CHAIN: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A chain cannot be created with a</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:8696;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">name that already exists.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:8730;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-004 DELETE A CHAIN: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A chain can be deleted always</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:8750;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">that does not contain rules.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:8784;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-005 CREATE A RULE:</font></font></nobr></div>
+<div style="position:absolute;top:8820;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-006 DELETE A RULE:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:18px;font-family:Times">
+<div style="position:absolute;top:8877;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.4. </font><font style="vertical-align: inherit;">Functional requirements</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:8961;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-001: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The system must allow a table, chain or rule to be</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:8981;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">added or modified at any time respecting business rules.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:9014;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-002: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The system must allow export / import of the rule set</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:9035;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tables and strings stored or supplied by the user.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:9068;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-003: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">In the creation of rules, the system must allow the use of options</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:9088;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">to create the rule, this is: choice of source / destination port, source ip</font></font></nobr></div>
+<div style="position:absolute;top:9106;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">gen / destination, source / destination network, actions on packets (drop, reject, accept, redirect),</font></font></nobr></div>
+<div style="position:absolute;top:9124;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">protocol used, interface used, etc.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:15px;font-family:Times">
+<div style="position:absolute;top:9158;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-004: </font></font><font style="font-size:13px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The system must show the created rules and be able to carry out actions</font></font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:9178;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">about them.</font></font></nobr></div>
+<div style="position:absolute;top:9530;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:9679;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="9"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 9</font></font></b></a></font></td></tr></tbody></table></div><font size="4" face="Times"><span style="font-size:22px;font-family:Times">
+<div style="position:absolute;top:9858;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6. Conceptual model</font></font></nobr></div>
+</span></font>
+<div style="position:absolute;top:9883;left:201"><nobr><img src="Requirements document - nftables-gui - github_files/Ch6_Pg9_1.png" /></nobr></div>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:10718;left:455"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:10867;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="10"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 10</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:18px;font-family:Times">
+<div style="position:absolute;top:11049;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6.1. </font><font style="vertical-align: inherit;">Traceability matrix</font></font></nobr></div>
+<div style="position:absolute;top:11080;left:201"><nobr><img src="Requirements document - nftables-gui - github_files/Ch6.1_Pg10_Traceability-Matrix.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:11549;left:213"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&#160;</font></font></nobr></div>
+<div style="position:absolute;top:11549;left:290"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TABLE</font></font></nobr></div>
+<div style="position:absolute;top:11549;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CHAIN</font></font></nobr></div>
+<div style="position:absolute;top:11549;left:415"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RULE</font></font></nobr></div>
+<div style="position:absolute;top:11570;left:213"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RI-001</font></font></nobr></div>
+<div style="position:absolute;top:11570;left:290"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11570;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11570;left:415"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11589;left:213"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RI-002</font></font></nobr></div>
+<div style="position:absolute;top:11589;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11589;left:351"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11589;left:415"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11607;left:213"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RI-003</font></font></nobr></div>
+<div style="position:absolute;top:11607;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11607;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11607;left:412"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11626;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-001</font></font></nobr></div>
+<div style="position:absolute;top:11626;left:290"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11626;left:351"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11626;left:412"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11644;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-002</font></font></nobr></div>
+<div style="position:absolute;top:11644;left:290"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11644;left:351"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11644;left:412"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11663;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-003</font></font></nobr></div>
+<div style="position:absolute;top:11663;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11663;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11663;left:412"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11681;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RF-004</font></font></nobr></div>
+<div style="position:absolute;top:11681;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11681;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11681;left:412"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11700;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-001</font></font></nobr></div>
+<div style="position:absolute;top:11700;left:290"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11700;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11700;left:415"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11718;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-002</font></font></nobr></div>
+<div style="position:absolute;top:11718;left:290"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11718;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11718;left:415"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11737;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-003</font></font></nobr></div>
+<div style="position:absolute;top:11737;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11737;left:351"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11737;left:415"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11755;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-004</font></font></nobr></div>
+<div style="position:absolute;top:11755;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11755;left:351"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11755;left:415"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11774;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-005</font></font></nobr></div>
+<div style="position:absolute;top:11774;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11774;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11774;left:412"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11793;left:210"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RN-006</font></font></nobr></div>
+<div style="position:absolute;top:11793;left:293"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11793;left:354"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-</font></font></nobr></div>
+<div style="position:absolute;top:11793;left:412"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></nobr></div>
+<div style="position:absolute;top:11906;left:451"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:12055;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="11"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 11</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:18px;font-family:Times">
+<div style="position:absolute;top:12237;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6.2. </font><font style="vertical-align: inherit;">Test scenario</font></font></nobr></div>
+<div style="position:absolute;top:12260;left:201"><nobr><img src="Requirements document - nftables-gui - github_files/Ch6.2_Pg11_Test-Scenario.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:13094;left:451"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">eleven</font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:13243;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="12"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 12</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times"><span style="font-size:18px;font-family:Times">
+<div style="position:absolute;top:13390;left:201"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6.3. </font><font style="vertical-align: inherit;">Dependency graph</font></font></nobr></div>
+<div style="position:absolute;top:13410;left:201"><nobr><img src="Requirements document - nftables-gui - github_files/Ch6.3_Pg12_DependencyGraph_1.png" /></nobr></div>
+<div style="position:absolute;top:13820;left:201"><nobr><img src="Requirements document - nftables-gui - github_files/Ch6.3_Pg12_DependencyGraph_2.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:14282;left:451"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></nobr></div>
+</span></font>
+
+</body>
+</html>
