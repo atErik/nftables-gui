@@ -2,7 +2,7 @@
 Nftables-gui es una interfaz gráfica para nftables[1] escrita en c usando ncurses para facilitar el uso de la herramienta nft.  
 Nftables-gui is a graphical interface for nftables[1] written in c using ncurses to facilitate the use of the nft tool.
 * Para la edición traducida al inglés, vaya <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">aquí</a>, Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambiar "maestro" a la rama "Mod-and-English", entonces puede "Descargar" edición en inglés o puede enviar sus cambios de código (inglés), etc.
-* For English translated edition go <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>, or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" to "Mod-and-English" branch, then you may "Download" english edition or you may submit your (english) code-changes, etc.
+* **For English (translated) edition go <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>**, or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" to "Mod-and-English" branch, then you may "Download" english edition or you may submit your (english) code-changes, etc.
 
 Forma parte del proyecto de fin de carrera, por lo cual el estado de este software se seguirá.  
 It is part of the end-of-career project, so the status of this software will be followed.
