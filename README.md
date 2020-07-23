@@ -58,6 +58,10 @@ And to restore:
 	or, nft -f file.txt
 
 
+Documentation(English):<br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation(English)/iptables-vs-nftables_nftables-gui_github.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
+<br />
+
 BLOG: http://caballeroalba.cf/wordpress/
 
 [1] http://www.netfilter.org/projects/nftables/index.html  
