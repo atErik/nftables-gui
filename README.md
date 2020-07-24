@@ -67,5 +67,5 @@ Documentation (English):<br />
 Original Author's BLOG: http://caballeroalba.cf/wordpress/
 
 Below Links Are Used In Above:  
-[1] http://www.netfilter.org/projects/nftables/index.html  
-[2] http://wiki.nftables.org/wiki-nftables/index.php/Building_and_installing_nftables_from_sources
+[1] https://www.netfilter.org/projects/nftables/index.html  
+[2] https://wiki.nftables.org/wiki-nftables/index.php/Building_and_installing_nftables_from_sources
