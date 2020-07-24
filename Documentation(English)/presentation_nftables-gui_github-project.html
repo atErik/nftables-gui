@@ -1,0 +1,794 @@
+<html class="translated-ltr" lang="en">
+<head>
+<style type="text/css">.tsv-src-text {display: none !important} .tsv-src-active-text {display: block!important;color:black!important; font-size:12px!important;font-family:arial,sans-serif!important}.tsv-src-active-text a {font-size:12px!important}.tsv-src-active-text a:link {color:#00c!important;text-decoration:underline!important}.tsv-src-active-text a:visited {color:purple!important;text-decoration:underline!important}.tsv-src-active-text a:active {color:red!important;text-decoration:underline!important}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Creator" content="LaTeX with Beamer class version 3.10">
+<meta name="Producer" content="pdfTeX-1.40.13">
+<meta name="CreationDate" content="D:20150416165536+02'00'">
+<meta name="ModDate" content="D:20150416165536+02'00'">
+<meta name="Fullbanner" content="This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) kpathsea version 6.1.0">
+<title>Presentation - nftables-gui - github</title>
+</head>
+<body vlink="blue" link="blue" bgcolor="#ffffff">
+<style>
+.spinner-container {width:25%;top:20px;left:50%;margin-left:-12.5%;border-radius:8px;position:fixed;
+text-align:center;box-shadow:0 0 10px rgba(0,0,0,0.24);background:#fff;overflow:hidden;}
+.spinner-container p{font-family:'Roboto', Arial, sans-serif;color:rgba(0,0,0,0.87);margin:12px 0 16px 0;
+padding:0;font-size:12px;}
+.spinner-container img{width:22px;height:22px;margin:16px 0 0;padding:0;}
+</style>
+<table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="1"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 1</font></font></b></a></font></td></tr></tbody></table><font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:282;left:221"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:344;left:183"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba</font></font></nobr></div>
+<div style="position:absolute;top:364;left:188"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">caballeroalba@gmail.com</font></font></nobr></div>
+<div style="position:absolute;top:387;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A graphical interface for the new Linux firewall.</font></font></nobr></div>
+<div style="position:absolute;top:453;left:207"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">April 16, 2015</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:568;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:579;left:4"><nobr><a href="#34"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:568;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:568;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>1a/26</b></font></font></nobr></div>
+<!--
+José María Caballero Alba caballeroalba@gmail.com A graphic interface for the new Linux firewall. nftables-gui - April 16, 2015 - 1/26
+
+José María Caballero Alba caballeroalba@gmail.com Una interfaz gráphica para el nuevo cortafuegos de Linux . nftables-gui - 16 de abril de 2015 - 1/26
+
+JoséMaríaCaballeroAlbacaballeroalba@gmail.comUnainterfazgrácaparaelnuevocortafuegosdeLinux.()Nftables-gui16deabrilde20151/26
+-->
+</span></font>
+
+<div style="position:absolute;top:583;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="2"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 2</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:631;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:669;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:708;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:747;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:786;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:825;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:864;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:902;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:941;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:976;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:987;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:976;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:976;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>1b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:991;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="3"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 3</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:990;left:223"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:1030;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">issue</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:1161;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables is a new framework that replaces the old iptables. </font><font style="vertical-align: inherit;">This</font></font></nobr></div>
+<div style="position:absolute;top:1182;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new software is not yet 100% developed but is already operational in</font></font></nobr></div>
+<div style="position:absolute;top:1202;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">much of its functions.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:1384;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:1395;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:1384;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:1384;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>2/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:1399;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="4"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 4</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:1398;left:223"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:1438;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">issue</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:1539;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables intends to replace Iptables in the near future.</font></font></nobr></div>
+<div style="position:absolute;top:1564;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">New syntax</font></font></nobr></div>
+<div style="position:absolute;top:1589;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It has a learning curve.</font></font></nobr></div>
+<div style="position:absolute;top:1613;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Still in development</font></font></nobr></div>
+<div style="position:absolute;top:1638;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adaptation on servers</font></font></nobr></div>
+<div style="position:absolute;top:1663;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">User disinterest</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:1792;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:1803;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:1792;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:1792;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>3/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:1807;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="5"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 5</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:1806;left:223"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:1846;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">issue</font></font></nobr></div>
+<div style="position:absolute;top:1861;left:13"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_4-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:2200;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:2211;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:2200;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:2200;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>4/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:2215;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="6"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 6</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:2214;left:182"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:2265;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2305;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2346;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2387;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2428;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2469;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2510;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2551;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:2592;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:2608;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:2619;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:2608;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:2608;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>5a/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:2623;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="7"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 7</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:2622;left:182"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:2662;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:2762;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The solution provided will consist of a graphical interface written in cy</font></font></nobr></div>
+<div style="position:absolute;top:2782;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">using ncurses to be able to handle nftables so that it is</font></font></nobr></div>
+<div style="position:absolute;top:2803;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">easier to use.</font></font></nobr></div>
+<div style="position:absolute;top:2827;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This implies a substantial improvement for those who want</font></font></nobr></div>
+<div style="position:absolute;top:2848;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">stop using iptables and can use nftables with all</font></font></nobr></div>
+<div style="position:absolute;top:2868;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">new features making the slope of the curve more</font></font></nobr></div>
+<div style="position:absolute;top:2888;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lightweight.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:3016;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:3027;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:3016;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:3016;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>5b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:3031;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="8"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 8</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:3030;left:182"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:3070;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:3196;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A graphical interface that gives us the solution to:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:3223;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Learning curve</font></font></nobr></div>
+<div style="position:absolute;top:3240;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Final adaptation</font></font></nobr></div>
+<div style="position:absolute;top:3258;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">User disinterest</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:3424;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:3435;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:3424;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:3424;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>6a/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:3439;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="9"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 9</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:3438;left:195"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:3487;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3525;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3564;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3603;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3642;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3681;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3720;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3758;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:3797;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:3832;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:3843;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:3832;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:3832;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>6b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:3847;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="10"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 10</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:3846;left:195"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:3886;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art studio</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:3974;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Currently there are the following applications that offer an interface</font></font></nobr></div>
+<div style="position:absolute;top:3994;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">graph:</font></font></nobr></div>
+<div style="position:absolute;top:4019;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vuurmuur firewall</font></font></nobr></div>
+<div style="position:absolute;top:4044;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fwbuilder</font></font></nobr></div>
+<div style="position:absolute;top:4069;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ipmenu</font></font></nobr></div>
+<div style="position:absolute;top:4093;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Easy firewall generator</font></font></nobr></div>
+<div style="position:absolute;top:4118;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Turtle firewall project</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:4240;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:4251;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:4240;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:4240;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>7/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:4255;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="11"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 11</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:4254;left:195"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:4294;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art studio</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:4388;left:71"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">software</font></font></nobr></div>
+<div style="position:absolute;top:4388;left:194"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Easy to use</font></font></nobr></div>
+<div style="position:absolute;top:4388;left:338"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Project life</font></font></nobr></div>
+<div style="position:absolute;top:4412;left:68"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">vuurmuur</font></font></nobr></div>
+<div style="position:absolute;top:4412;left:244"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></nobr></div>
+<div style="position:absolute;top:4412;left:337"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 (still in support)</font></font></nobr></div>
+<div style="position:absolute;top:4433;left:76"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ipmenu</font></font></nobr></div>
+<div style="position:absolute;top:4433;left:244"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></nobr></div>
+<div style="position:absolute;top:4433;left:350"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 (without stand)</font></font></nobr></div>
+<div style="position:absolute;top:4454;left:70"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">fwbuilder</font></font></nobr></div>
+<div style="position:absolute;top:4454;left:244"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></nobr></div>
+<div style="position:absolute;top:4454;left:320"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 (latest version 2013)</font></font></nobr></div>
+<div style="position:absolute;top:4475;left:25"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">easy firewall generator</font></font></nobr></div>
+<div style="position:absolute;top:4475;left:244"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></nobr></div>
+<div style="position:absolute;top:4475;left:329"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 (2005, unsupported)</font></font></nobr></div>
+<div style="position:absolute;top:4496;left:58"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">turtlefirewall</font></font></nobr></div>
+<div style="position:absolute;top:4496;left:244"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></nobr></div>
+<div style="position:absolute;top:4496;left:320"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 (latest version 2011)</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cccccc"><span style="font-size:14px;font-family:Times;color:#888888">
+<div style="position:absolute;top:4516;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The score ranges from 1 to 5, with 1 being the worst and 5 the best</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:4648;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:4659;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:4648;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:4648;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>8/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:4663;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="12"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 12</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:4662;left:195"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:4703;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art studio</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:4849;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The problem is given that none of them is made for nftables.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:5056;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:5067;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:5056;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:5056;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>9/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:5071;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="13"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 13</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:5070;left:220"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:5121;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5161;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5202;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5243;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5284;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5325;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5366;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5407;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5448;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:5464;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:5475;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:5464;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:5464;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>10a/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:5479;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="14"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 14</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:5478;left:220"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:5518;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:5579;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create / delete tables of type ip, ip6, arp, bridge</font></font></nobr></div>
+<div style="position:absolute;top:5604;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create / delete base or custom type strings</font></font></nobr></div>
+<div style="position:absolute;top:5629;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create / delete rules allowing customizing filtering taking</font></font></nobr></div>
+<div style="position:absolute;top:5649;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">bill:</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:13px;font-family:Times">
+<div style="position:absolute;top:5675;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Protocol</font></font></nobr></div>
+<div style="position:absolute;top:5693;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hook (INPUT, OUTPUT, PREROUTING, FORWARD,</font></font></nobr></div>
+<div style="position:absolute;top:5711;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">POSTROUTING)</font></font></nobr></div>
+<div style="position:absolute;top:5729;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IP / network / port / interface source and destination</font></font></nobr></div>
+<div style="position:absolute;top:5747;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dictionaries</font></font></nobr></div>
+<div style="position:absolute;top:5765;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Zones</font></font></nobr></div>
+<div style="position:absolute;top:5783;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NAT</font></font></nobr></div>
+<div style="position:absolute;top:5801;left:82"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Maps</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:5872;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:5883;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:5872;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:5872;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>10b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:5887;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="15"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 15</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:5886;left:235"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:5937;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:5977;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:6018;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:6059;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:6100;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:6141;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:6182;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:6223;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:6264;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:6280;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:6291;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:6280;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:6280;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>11a/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:6295;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="16"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 16</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:6294;left:235"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:6334;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conceptual model</font></font></nobr></div>
+<div style="position:absolute;top:6300;left:176"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_11-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:6688;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:6699;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:6688;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:6688;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>11b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:6703;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="17"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 17</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:6702;left:235"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:6742;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Navigability diagram</font></font></nobr></div>
+<div style="position:absolute;top:6765;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_12-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:7096;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:7107;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:7096;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:7096;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>12/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:7111;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="18"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 18</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:7110;left:235"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:7150;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Navigability<br />diagram</font></font></nobr></div>
+<div style="position:absolute;top:7122;left:105"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_13-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:7504;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:7515;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:7504;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:7504;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>13/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:7519;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="19"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 19</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:7518;left:235"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:7558;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Navigability<br />diagram</font></font></nobr></div>
+<div style="position:absolute;top:7530;left:105"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_14-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:7912;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:7923;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:7912;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:7912;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>14/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:7927;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="20"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 20</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:7926;left:235"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:7966;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:8073;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This software has been carried out using the architectural model</font></font></nobr></div>
+<div style="position:absolute;top:8093;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MVC, separating the logic of the software with the presentation to the user</font></font></nobr></div>
+<div style="position:absolute;top:8113;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">in ncurses.</font></font></nobr></div>
+<div style="position:absolute;top:8138;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This has been done by creating an API that allows</font></font></nobr></div>
+<div style="position:absolute;top:8159;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">series of parameters create a view without it knowing the logic of</font></font></nobr></div>
+<div style="position:absolute;top:8179;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">application business.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:8320;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:8331;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:8320;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:8320;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>15/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:8335;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="21"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 21</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:8334;left:208"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:8385;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8425;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8466;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8507;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8548;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8589;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8630;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8671;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:8712;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:8728;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:8739;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:8728;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:8728;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>16a/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:8743;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="22"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 22</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:8742;left:208"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:8782;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:8885;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C language</font></font></nobr></div>
+<div style="position:absolute;top:8910;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Libncurses library</font></font></nobr></div>
+<div style="position:absolute;top:8934;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nft user-space command-line utility (utility for</font></font></nobr></div>
+<div style="position:absolute;top:8955;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">interact with nftables)</font></font></nobr></div>
+<div style="position:absolute;top:8979;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GNU Build System (Autotools) for building the software</font></font></nobr></div>
+<div style="position:absolute;top:9004;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Git as version control</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:9136;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:9147;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:9136;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:9136;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>16b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:9151;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="23"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 23</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:9150;left:208"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:9190;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Why C and libncurses?</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:9322;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TIOBE declares C as the best language to program.</font></font></nobr></div>
+<div style="position:absolute;top:9346;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ncurses provides an API that allows the programmer to write interfaces</font></font></nobr></div>
+<div style="position:absolute;top:9367;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">text-based TUIs.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:9544;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:9555;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:9544;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:9544;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>17/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:9559;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="24"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 24</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:9558;left:200"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:9598;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times"><span style="font-size:14px;font-family:Times">
+<div style="position:absolute;top:9686;left:16"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This project does not end here. </font><font style="vertical-align: inherit;">In the future it is intended:</font></font></nobr></div>
+<div style="position:absolute;top:9711;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Translations into other languages.</font></font></nobr></div>
+<div style="position:absolute;top:9736;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Functionality improvements</font></font></nobr></div>
+<div style="position:absolute;top:9760;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inclusion in the official repositories of the usual distributions</font></font></nobr></div>
+<div style="position:absolute;top:9785;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Libnftnl for communication with the nf_tables kernel subsystem</font></font></nobr></div>
+<div style="position:absolute;top:9810;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Libmnl for the validation, construction and parsing of the structures of</font></font></nobr></div>
+<div style="position:absolute;top:9830;left:49"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tables, strings and rules.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:9952;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:9963;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:9952;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:9952;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>18/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:9967;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="25"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 25</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:9966;left:217"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:10017;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10057;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10098;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10139;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10180;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10221;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10262;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10303;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:10344;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:10360;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:10371;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:10360;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:10360;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>19a/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:10375;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="26"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 26</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:10374;left:217"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:10414;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></nobr></div>
+<div style="position:absolute;top:10431;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_19-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:10768;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:10779;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:10768;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:10768;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>19b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:10783;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="27"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 27</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:10782;left:217"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:10822;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></nobr></div>
+<div style="position:absolute;top:10839;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_20-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:11176;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:11187;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:11176;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:11176;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>20/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:11191;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="28"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 28</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:11190;left:217"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:11230;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></nobr></div>
+<div style="position:absolute;top:11247;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_21-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:11584;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:11595;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:11584;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:11584;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>21/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:11599;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="29"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 29</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:11598;left:217"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:11638;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></nobr></div>
+<div style="position:absolute;top:11655;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_22-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:11992;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:12003;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:11992;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:11992;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>22/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:12007;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="30"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 30</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:12006;left:217"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:12046;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></nobr></div>
+<div style="position:absolute;top:12042;left:70"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_23-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:12400;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:12411;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:12400;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:12400;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>23/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:12415;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="31"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 31</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:12414;left:217"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:12454;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></nobr></div>
+<div style="position:absolute;top:12471;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_24-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:12808;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:12819;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:12808;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:12808;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>24/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:12823;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="32"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 32</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:12822;left:208"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#ebebf7"><span style="font-size:10px;font-family:Times;color:#ebebf7">
+<div style="position:absolute;top:12873;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 </font></font><font style="font-size:14px" color="#000000"><a href="#3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Problem</font></font></a></font></nobr></div>
+<div style="position:absolute;top:12913;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 </font></font><font style="font-size:14px" color="#000000"><a href="#6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution provided.</font></font></a></font></nobr></div>
+<div style="position:absolute;top:12954;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 </font></font><font style="font-size:14px" color="#000000"><a href="#9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Art study</font></font></a></font></nobr></div>
+<div style="position:absolute;top:12995;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 </font></font><font style="font-size:14px" color="#000000"><a href="#13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Requirements</font></font></a></font></nobr></div>
+<div style="position:absolute;top:13036;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 </font></font><font style="font-size:14px" color="#000000"><a href="#15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Design</font></font></a></font></nobr></div>
+<div style="position:absolute;top:13077;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6 </font></font><font style="font-size:14px" color="#000000"><a href="#21"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Implementation</font></font></a></font></nobr></div>
+<div style="position:absolute;top:13118;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 </font></font><font style="font-size:14px" color="#000000"><a href="#24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Future work</font></font></a></font></nobr></div>
+<div style="position:absolute;top:13159;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 </font></font><font style="font-size:14px" color="#000000"><a href="#25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Results</font></font></a></font></nobr></div>
+<div style="position:absolute;top:13200;left:17"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 </font></font><font style="font-size:14px" color="#000000"><a href="#32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></a></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:13216;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:13227;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:13216;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:13216;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>25a/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:13231;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="33"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 33</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:13230;left:208"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:13270;left:13"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conclusions</font></font></nobr></div>
+<div style="position:absolute;top:13287;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_25-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:13624;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:13635;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:13624;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:13624;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>25b/26</b></font></font></nobr></div>
+</span></font>
+
+<div style="position:absolute;top:13639;left:0"><hr><table width="100%" border="0"><tbody><tr><td bgcolor="eeeeee" align="right"><font face="arial,sans-serif"><a name="34"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page 34</font></font></b></a></font></td></tr></tbody></table></div><font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#f2f2f2">
+<div style="position:absolute;top:13638;left:208"><nobr></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#cc0000"><span style="font-size:18px;font-family:Times;color:#cc0000">
+<div style="position:absolute;top:13667;left:100"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thank you</font></font></nobr></div>
+<div style="position:absolute;top:13685;left:15"><nobr><img src="presentation_nftables-gui_github-project_files/prsnt_26-26_1.png" /></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#f2f2f2"><span style="font-size:10px;font-family:Times;color:#101010">
+<div style="position:absolute;top:14032;left:4"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">José María Caballero Alba caballeroalba@gmail.com A graphical interface for the new Linux firewall.</font></font></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#8f0000"><span style="font-size:10px;font-family:Times;color:#8f0000">
+<div style="position:absolute;top:14043;left:4"><nobr><a href="#1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nftables-gui</font></font></a></nobr></div>
+</span></font>
+<font size="3" face="Times" color="#7a0000"><span style="font-size:10px;font-family:Times;color:#7a0000">
+<div style="position:absolute;top:14032;left:435"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- April 16, 2015 - </font></font></nobr></div>
+<div style="position:absolute;top:14032;left:515"><nobr><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><b>26/26</b></font></font></nobr></div>
+</span></font>
+
+</body>
+</html>
