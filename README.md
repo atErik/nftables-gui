@@ -6,13 +6,13 @@ to facilitate the use of the nft tool.
 * Para la edición traducida al inglés, vaya 
 <a href="https://github.com/atErik/nftables-gui/tree/nftables-gui_mod-english">aquí</a>, 
 Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", 
-Cambiar "maestro" a la rama "Mod-and-English", 
+Cambiar "maestro" a la rama "nftables-gui_mod-english", 
 entonces puede "Descargar" edición en inglés o puede enviar sus cambios de código (inglés), 
 etc.
 * **For English (translated) edition go** 
 **<a href="https://github.com/atErik/nftables-gui/tree/nftables-gui_mod-english">here</a>**, 
 Or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, 
-Change "master" to "Mod-and-English" branch, 
+Change "master" to "**nftables-gui_mod-english**" **branch**, 
 then you may "Download" english edition or you may submit your (english) code-changes, 
 etc.
 
