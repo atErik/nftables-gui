@@ -57,6 +57,8 @@ Y para restaurar:
 	    nft -f file.txt
 	or, nft -f fichero.txt
 
+TUI/CLI (GUI-Like):<br />
+<div width="100%"><nobr><img src="Documentation%28English%29/presentation%5Fnftables-gui%5Fgithub-project%5Ffiles/prsnt%5F4-26%5F1.png" /></nobr></div>
 
 Documentation (English):<br />
 <b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation%28English%29/iptables-vs-nftables%5Fnftables-gui%5Fgithub.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
