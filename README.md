@@ -1,8 +1,8 @@
 # nftables-gui
 Nftables-gui is a graphical interface for nftables[1] written in C using ncurses to facilitate the use of the nft tool.  
 Nftables-gui es una interfaz gráfica para nftables[1] escrita en c usando ncurses para facilitar el uso de la herramienta nft.
-* For English translated edition go <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>, Or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" into "Mod-and-English" branch, then you may "Download" english edition or you may submit your (english) code-changes, etc.
-* Para la edición traducida al inglés vaya <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">aquí</a>, Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambie la rama "maestro" en "Mod-and-English", entonces puede "Descargar" edición en inglés o puede enviar sus cambios de código (inglés), etc.
+* For English translated edition go <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">here</a>, Or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" into "**nftables-gui_mod-english**" branch, then you may "Download" or you may submit your (english) code-changes, etc.
+* Para la edición traducida al inglés vaya <a href="https://github.com/atErik/nftables-gui/tree/Mod-and-English">aquí</a>, Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambie la rama "maestro" en "nftables-gui_mod-english", entonces puede "Descargar" o puede enviar sus cambios de código (inglés), etc.
 
 It is part of the end-of-career project, so the status of this software will be followed.  
 Forma parte del proyecto de fin de carrera, por lo cual el estado de este software se seguirá.
@@ -61,9 +61,9 @@ TUI/CLI (GUI-Like):<br />
 <div width="100%"><nobr><img src="Documentation%28English%29/presentation%5Fnftables-gui%5Fgithub-project%5Ffiles/prsnt%5F19-26%5F1.png" /></nobr></div>
 
 Documentation (English):<br />
-<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation%28English%29/iptables-vs-nftables%5Fnftables-gui%5Fgithub.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
-<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation%28English%29/Requirements%20document%20-%20nftables-gui%20-%20github.html">Requirements document - nftables-gui - github.html</a><br />
-<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/Mod-and-English/Documentation%28English%29/presentation%5Fnftables-gui%5Fgithub-project.html">presentation_nftables-gui_github-project.html</a><br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/iptables-vs-nftables%5Fnftables-gui%5Fgithub.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/Requirements%20document%20-%20nftables-gui%20-%20github.html">Requirements document - nftables-gui - github.html</a><br />
+<b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/presentation%5Fnftables-gui%5Fgithub-project.html">presentation_nftables-gui_github-project.html</a><br />
 <br />
 
 Original Author's BLOG: http://caballeroalba.cf/wordpress/
