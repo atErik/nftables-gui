@@ -1,8 +1,8 @@
 # nftables-gui
-Nftables-gui is a graphical interface for nftables[1] written in C using ncurses to facilitate the use of the nft tool.  
-Nftables-gui es una interfaz gráfica para nftables[1] escrita en c usando ncurses para facilitar el uso de la herramienta nft.
-* For English translated edition go <a href="https://github.com/atErik/nftables-gui/tree/nftables-gui_mod-english">here</a>, Or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" into "**nftables-gui_mod-english**" branch, then you may "Download" or you may submit your (english) code-changes, etc.
-* Para la edición traducida al inglés vaya <a href="https://github.com/atErik/nftables-gui/tree/nftables-gui_mod-english">aquí</a>, Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambie la rama "maestro" en "nftables-gui_mod-english", entonces puede "Descargar" o puede enviar sus cambios de código (inglés), etc.
+nftables-gui is a <a href="https://en.wikipedia.org/wiki/Nftables">nftables</a>[<a href="https://www.netfilter.org/projects/nftables/index.html">1</a>] configuration app(tool), ₁(nftables is an advanced network <a href="https://en.wikipedia.org/wiki/Firewall%5F%28computing%29">firewall</a> subsystem built into Linux kernel, it can do various layers of network data packet filtering, <a href="https://en.wikipedia.org/wiki/Network%5Faddress%5Ftranslation">NAT</a>, connection tracking, queueing, etc, etc. And nftables is successor of iptables)₁, nftables-gui is written in C, and it uses <a href="https://en.wikipedia.org/wiki/Ncurses">ncurses</a> library, to function as a <a href="https://en.wikipedia.org/wiki/Text-based%5Fuser%5Finterface">TUI</a>, a <a href="https://en.wikipedia.org/wiki/Graphical%5Fuser%5Finterface">GUI</a>-Like wrapper, a <a href="https://en.wikipedia.org/wiki/Front-end%5F%28computing%29">front-end</a> for the <a href="https://manpages.debian.org/buster/nftables/nft.8.en.html">nft</a> tool. It can be run from <a href="https://en.wikipedia.org/wiki/Command-line%5Finterface">CLI</a> or shell terminals.  
+* nftables-gui es un <a href="https://es.wikipedia.org/wiki/Nftables">nftables</a>[<a href="https://www.netfilter.org/projects/nftables/index.html">1</a>] aplicación(herramienta) de configuración, ₁(nftables es una red avanzada <a href="https://es.wikipedia.org/wiki/Firewall%5F%28computing%29">firewall</a> subsistema construido en el núcleo de Linux, puede hacer varias capas de filtrado de paquetes de datos de red, <a href="https://es.wikipedia.org/wiki/Network%5Faddress%5Ftranslation">NAT</a>, seguimiento de conexiones, colas, etc., etc. Y nftables es sucesor de iptables)₁, nftables-gui está escrito en C, y utiliza La biblioteca <a href="https://es.wikipedia.org/wiki/Ncurses">ncurses</a>, para funcionar como un <a href="https://es.wikipedia.org/wiki/Text-based%5Fuser%5Finterface">TUI</a>, un envoltorio <a href="https://en.wikipedia.org/wiki/Graphical%5Fuser%5Finterface">GUI</a>-Like, un <a href="https://es.wikipedia.org/wiki/Front-end%5F%28computing%29">front-end</a> para la herramienta nft. Se puede ejecutar desde terminales CLI o shell.
+* For English translated edition go <a href="https://github.com/atErik/nftables-gui/tree/nftables-gui_mod-english">here</a>, Or, Under &#91;&lt;&gt;Code&#93; tab, find button showing "master" branch, Change "master" into "**nftables-gui_mod-english**" branch, then you may "Download" or you may submit your (english) code-changes, etc. For Spanish, go <a href="https://github.com/atErik/nftables-gui">here</a>.
+* Para la edición traducida al inglés vaya <a href="https://github.com/atErik/nftables-gui/tree/nftables-gui_mod-english">aquí</a>, Or, En la pestaña &#91;&lt;&gt;Código&#93;, busque el botón "maestro", Cambie la rama "maestro" en "nftables-gui_mod-english", entonces puede "Descargar" o puede enviar sus cambios de código (inglés), etc. Para español, vaya a <a href="https://github.com/atErik/nftables-gui">aquí</a>.
 
 It is part of the end-of-career project, so the status of this software will be followed.  
 Forma parte del proyecto de fin de carrera, por lo cual el estado de este software se seguirá.
@@ -24,8 +24,8 @@ Puedes instalarla de la siguiente manera:
 linux kernel greater than 3.13  
 linux kernel superior al 3.13
 
-nftables installed on the system [2]  
-nftables instalado en el sistema [2]
+nftables installed on the system [<a href="https://wiki.nftables.org/wiki-nftables/index.php/Building_and_installing_nftables_from_sources">2</a>]  
+nftables instalado en el sistema [<a href="https://wiki.nftables.org/wiki-nftables/index.php/Building_and_installing_nftables_from_sources">2</a>]
 
 Once done, just execute the following commands:  
 Una vez hecho, basta con ejecutar los siguentes comandos:
@@ -68,7 +68,3 @@ Documentation (English):<br />
 <br />
 
 Original Author's BLOG: http://caballeroalba.cf/wordpress/
-
-Below Links Are Used In Above:  
-[1] https://www.netfilter.org/projects/nftables/index.html  
-[2] https://wiki.nftables.org/wiki-nftables/index.php/Building_and_installing_nftables_from_sources
