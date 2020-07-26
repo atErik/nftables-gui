@@ -13,7 +13,7 @@ nftables-gui is a <a href="https://en.wikipedia.org/wiki/Nftables">nftables</a>[
 </div>
 
 <div>To be able to compile it is necessary to have the following requirements :<dl>
-Para poder compilar es necesario tener los siguientes requisitos :</dd></dl>
+<dd><b class="b">•</b> Para poder compilar es necesario tener los siguientes requisitos :</dd></dl>
 </div>
 
 <div>The ncurses library (available from your distribution repositories)<dl>
