@@ -18,79 +18,74 @@ nftables-gui is a <a href="https://wiki.nftables.org/wiki-nftables/index.php/Mai
  desarrollando a lo largo del curso 14/15 hasta junio. Lo cual no quiere decir que no se seguirá después.</dd></dl>
 </div>
 
-<div>To be able to compile it is necessary to have the following requirements :<dl>
- <dd>Para poder compilar es necesario tener los siguientes requisitos :</dd></dl>
-</div>
 
-<div>The ncurses library (available from your distribution repositories)<dl>
- <dd>La librería de ncurses (disponible desde los repositorios de tu distribución)</dd>
- <dd>You can install ncurses as follows:<dl>
-  <dd>Puedes instalarla de la siguiente manera:</dd></dl>
- </dd><dd>
-  <pre><code>apt-get install ncurses-base libncurses5 libncurses5-dev</code></pre>
- </dd></dl>
-</div>
-
-<div>linux kernel greater than 3.13<dl>
- <dd>linux kernel superior al 3.13</dd>
- <dd>find out your linux kernel verison number with below commands:<br />
- averiguar su número de verison kernel linux con los siguientes comandos:<dl><dd> 
-<pre><code>uname –r
+### Pre-Requirements Before Compile:
+<div>To be able to compile it is necessary to have the following requirements :<br />
+Para poder compilar es necesario tener los siguientes requisitos :<dl>
+ <dd><b class="b">•</b> The ncurses library (available from your distribution repositories)<dl>
+  <dd>La librería de ncurses (disponible desde los repositorios de tu distribución)</dd>
+  <dd>You can install ncurses as follows:<dl>
+   <dd>Puedes instalarla de la siguiente manera:</dd>
+   <dd><pre><code>apt-get install ncurses-base libncurses5 libncurses5-dev</code></pre>
+   </dd></dl>
+  </dd></dl>
+ </dd>
+ <dd><b class="b">•</b> linux kernel greater than 3.13<dl>
+  <dd>linux kernel superior al 3.13</dd>
+  <dd>find out your linux kernel verison number with below commands:<br />
+  averiguar su número de verison kernel linux con los siguientes comandos:<dl>
+   <dd><pre><code>uname –r
 hostnamectl
 cat /proc/version
-dmesg | grep Linux</code></pre></dd></dl>
+dmesg | grep Linux</code></pre>
+   </dd></dl>
+  </dd></dl>
+  <dd><b class="b">•</b> nftables installed on the system. More info <a href="https://wiki.nftables.org/wiki-nftables/index.php/Building%5Fand%5Finstalling%5Fnftables%5Ffrom%5Fsources">here</a>⁽ ⁾<dl>
+   <dd>nftables instalado en el sistema. (Si no está instalado, consulte los enlaces anteriores para instalar nftables).</dd>
+   <dd>find out if nftables is installed or not:<dl>
+    <dd>averiguar si nftables está instalado o no:</dd>
+    <dd><pre><code>nft -v</code></pre>
+    ( if output shows version number, then it is installed, or else follow instruction in above linked page )<dl>
+     <dd>( si la salida muestra el número de versión, entonces se instala, o de lo contrario seguir las instrucciones en la página vinculada por encima )</dd></dl>
+    </dd></dl>
+   </dd></dl>
+  </dd></dl>
+</div>
+
+
+### Compile:
+<div>when you have completed above steps, then go inside the source-code folder of nftables-gui, and execute following commands:<dl>
+ <dd>cuando haya completado los pasos anteriores, vaya dentro de la carpeta source-code de nftables-gui y ejecute los siguientes comandos:</dd>
+ <dd><pre><code>./configure
+make</code></pre></dd>
+ <dd>This will generate the nftables-gui executable which needs root permissions in order to run.<dl>
+  <dd>Esto generará el ejecutable nftables-gui el cual necesita permisos de root para poder ejecutarse.</dd></dl>
  </dd></dl>
 </div>
 
-<div>nftables installed on the system. More info <a href="https://wiki.nftables.org/wiki-nftables/index.php/Building%5Fand%5Finstalling%5Fnftables%5Ffrom%5Fsources">here</a>⁽ ⁾<dl>
- <dd>nftables instalado en el sistema, (Si no está instalado, consulte los enlaces anteriores para instalar nftables).</dd>
- <dd>find out if nftables is installed or not:<br />
- averiguar si nftables está instalado o no:<dl><dd>
-  <pre><code>nft -v</code></pre></dd>
-  <dd>( if output shows version number, then it is install, or else follow instruction in above linked page )<br />
-  ( si la salida muestra el número de versión, entonces se instala, o de lo contrario seguir las instrucciones en la página vinculada por encima )
+### Caution & Warning:
+<div>As nftables-gui is still in an alpha state, nftables-gui still cannot read the current rules in the system,<dl>
+ <dd>Como nftables-gui esta en aún en un estado alfa, nftables-gui aún no puede leer las reglas actuales en el sistema,</dd></dl>
+so before starting the main run/execution, nftables-gui clears the current rules<dl>
+ <dd>por lo cual, antes de empezar la ejecución principal, nftables-gui borra las reglas</dd></dl>
+so that they do not interfere with the proper functioning of the application.<dl>
+ <dd>actuales para que no interfieran en el correcto funcionamiento de la aplicación.</dd></dl>
+Therefore it is recommended to save the current system rules with the following steps:<dl>
+ <dd>Por lo tanto Se recomienda guardar las reglas actuales del sistema con los siguientes pasos:</dd>
+ <dd><pre><code>    nft list [table_name] > file.txt
+or, nft list [nombre_tabla] > fichero.txt</code></pre></dd>
+ <dd>And to restore:<dl>
+  <dd>Y para restaurar:</dd>
+  <dd><pre><code>    nft -f file.txt
+or, nft -f fichero.txt</code></pre>
   </dd></dl>
  </dd></dl>
 </div>
 
-<div>when you have completed above steps, then go inside the source-code folder of nftables-gui, and execute following commands:<dl>
- <dd>cuando haya completado los pasos anteriores, vaya dentro de la carpeta source-code de nftables-gui y ejecute los siguientes comandos:</dd></dl>
- <pre><code>./configure
-make</code></pre>
-</div>
-
-<div>This will generate the nftables-gui executable which needs root permissions in order to run.<dl>
- <dd>Esto generará el ejecutable nftables-gui el cual necesita permisos de root para poder ejecutarse.</dd></dl>
-</div>
-
-<div>As nftables-gui is still in an alpha state, nftables-gui still cannot read the current rules in the system,<dl>
- <dd>Como nftables-gui esta en aún en un estado alfa, nftables-gui aún no puede leer las reglas actuales en el sistema,</dd></dl>
-</div>
-
-<div>so before starting the main run/execution, nftables-gui clears the current rules<dl>
- <dd>por lo cual, antes de empezar la ejecución principal, nftables-gui borra las reglas</dd></dl>
-</div>
-
-<div>so that they do not interfere with the proper functioning of the application.<dl>
- <dd>actuales para que no interfieran en el correcto funcionamiento de la aplicación.</dd></dl>
-</div>
-
-<div>Therefore it is recommended to save the current system rules with the following steps:<dl>
- <dd>Por lo tanto Se recomienda guardar las reglas actuales del sistema con los siguientes pasos:</dd></dl>
-<pre><code>    nft list [table_name] > file.txt
-or, nft list [nombre_tabla] > fichero.txt</code></pre>
-</div>
-
-<div>And to restore:<dl>
-<dd>Y para restaurar:</dd></dl>
-<pre><code>    nft -f file.txt
-or, nft -f fichero.txt</code></pre>
-</div>
-
-TUI/CLI (GUI-Like):<br />
+### TUI/CLI (GUI-Like):
 <div width="100%"><nobr><img src="Documentation%28English%29/presentation%5Fnftables-gui%5Fgithub-project%5Ffiles/prsnt%5F19-26%5F1.png" /></nobr></div>
 
-Documentation (English):<br />
+### Documentation (English):
 <b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/firewalls%20and%20nftables%20-%20study%20-%20nftables-gui%20-%20github.html">firewalls and nftables - study - nftables-gui - github.html</a><br />
 <b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/presentation%5Fnftables-gui%5Fgithub-project.html">presentation_nftables-gui_github-project.html</a><br />
 <b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/Requirements%20document%20-%20nftables-gui%20-%20github.html">Requirements document - nftables-gui - github.html</a><br />
