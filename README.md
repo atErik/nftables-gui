@@ -11,12 +11,11 @@ nftables-gui is a <a href="https://wiki.nftables.org/wiki-nftables/index.php/Mai
 <b class="b">•</b> 
 -->
 
-<div>It is part of the end-of-career project, so the status of this software will be followed.<dl>
- <dd>Forma parte del proyecto de fin de carrera, por lo cual el estado de este software se seguirá.</dd></dl>
-</div>
-
-<div>developing throughout the course 2014/2015 through June. Which doesn't mean it won't follow later.<dl>
- <dd>desarrollando a lo largo del curso 14/15 hasta junio. Lo cual no quiere decir que no se seguirá después.</dd></dl>
+<div>Original Author's BLOG: http://caballeroalba.cf/wordpress/ <dl>
+ <dd>It is part of the end-of-career project, so the status of this software will be followed.<br />
+ Forma parte del proyecto de fin de carrera, por lo cual el estado de este software se seguirá.</dd>
+ <dd>developing throughout the course 2014/2015 through June. Which doesn't mean it won't follow later.<br />
+ desarrollando a lo largo del curso 14/15 hasta junio. Lo cual no quiere decir que no se seguirá después.</dd></dl>
 </div>
 
 <div>To be able to compile it is necessary to have the following requirements :<dl>
@@ -97,5 +96,3 @@ Documentation (English):<br />
 <b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/Requirements%20document%20-%20nftables-gui%20-%20github.html">Requirements document - nftables-gui - github.html</a><br />
 <b>•</b> <a href="https://htmlpreview.github.io/?https://github.com/atErik/nftables-gui/blob/nftables-gui%5Fmod-english/Documentation%28English%29/iptables-vs-nftables%5Fnftables-gui%5Fgithub.html">iptables-vs-nftables_nftables-gui_github.html</a><br />
 <br />
-
-Original Author's BLOG: http://caballeroalba.cf/wordpress/
