@@ -36,10 +36,10 @@ nftables-gui is a <a href="https://wiki.nftables.org/wiki-nftables/index.php/Mai
  <dd>linux kernel superior al 3.13</dd>
  <dd>find out your linux kernel verison number with below commands:<br />
  averiguar su número de verison kernel linux con los siguientes comandos:<dl><dd> 
-  uname –r<br />
-  hostnamectl<br />
-  cat /proc/version<br />
-  dmesg | grep Linux</dd></dl>
+<pre><code>uname –r
+hostnamectl
+cat /proc/version
+dmesg | grep Linux</code></pre></dd></dl>
  </dd></dl>
 </div>
 
@@ -47,7 +47,7 @@ nftables-gui is a <a href="https://wiki.nftables.org/wiki-nftables/index.php/Mai
  <dd>nftables instalado en el sistema, (Si no está instalado, consulte los enlaces anteriores para instalar nftables).</dd>
  <dd>find out if nftables is installed or not:<br />
  averiguar si nftables está instalado o no:<dl><dd>
-  nft -v</dd>
+  <pre><code>nft -v</code></pre></dd>
   <dd>( if output shows version number, then it is install, or else follow instruction in above linked page )<br />
   ( si la salida muestra el número de versión, entonces se instala, o de lo contrario seguir las instrucciones en la página vinculada por encima )
   </dd></dl>
